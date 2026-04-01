@@ -9,23 +9,17 @@ package arrays;
 
 public class removeduplicate {
 
-   public int rd(int[]arr){
-       int n = arr.length;
-       int i = 1;
-       while(i<n){
-           if(arr[i] == arr[i-1]){
-               for(int j = i;j<n-1;j++){
-                   arr[j] = arr[j+1];
-               }
-               n--;
-           }else{
-               i++;
+   public int rd(int[]arr) {
+
+       int k = 0;
+       for(int i = 1; i<arr.length;i++){
+           if(arr[i]!=arr[k]){
+               arr[k+1]=arr[i];
+               k++;
            }
        }
-       return n;
-          }
-
-
+     return k+1;
+   }
     public static void main(String[] args) {
         int[] arr = {1,1,2,2,2,3,3};
         removeduplicate ob = new removeduplicate();
@@ -35,3 +29,20 @@ public class removeduplicate {
 
 
 }
+
+
+//>>>>> Brute Force Approach>>>>>>>
+//    int n = arr.length;
+//    int i = 1;
+//       while(i<n){
+//        if(arr[i] == arr[i-1]){
+//            for(int j = i;j<n-1;j++){
+//                arr[j] = arr[j+1];
+//            }
+//            n--;
+//        }else{
+//            i++;
+//        }
+//    }
+//       return n;
+//}
